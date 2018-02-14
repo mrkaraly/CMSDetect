@@ -2,21 +2,38 @@
 # Note that the project is openSource , so you can take it and make it your own :v i don't mind
 import requests
 import argparse
-from termcolor import colored, cprint
+try:
+	from termcolor import colored, cprint
+except:
+	pass
 
 # Print the banner
-banner = colored('''
-   _____ __  __  _____ _____       _            _   
-  / ____|  \/  |/ ____|  __ \     | |          | |  
- | |    | \  / | (___ | |  | | ___| |_ ___  ___| |_ 
- | |    | |\/| |\___ \| |  | |/ _ \ __/ _ \/ __| __|
- | |____| |  | |____) | |__| |  __/ ||  __/ (__| |_ 
-  \_____|_|  |_|_____/|_____/ \___|\__\___|\___|\__|
-                                                    
-		CMSDetect 
-Python script to detect the CMS that website running
-		By Mr.Kara						''', 'red')
-print banner
+try:
+	banner = colored('''
+	   _____ __  __  _____ _____       _            _   
+	  / ____|  \/  |/ ____|  __ \     | |          | |  
+	 | |    | \  / | (___ | |  | | ___| |_ ___  ___| |_ 
+	 | |    | |\/| |\___ \| |  | |/ _ \ __/ _ \/ __| __|
+	 | |____| |  | |____) | |__| |  __/ ||  __/ (__| |_ 
+	  \_____|_|  |_|_____/|_____/ \___|\__\___|\___|\__|
+
+			CMSDetect 
+	Python script to detect the CMS that website running
+			By Mr.Kara						''', 'red')
+	print banner
+except:
+		banner = '''
+	   _____ __  __  _____ _____       _            _   
+	  / ____|  \/  |/ ____|  __ \     | |          | |  
+	 | |    | \  / | (___ | |  | | ___| |_ ___  ___| |_ 
+	 | |    | |\/| |\___ \| |  | |/ _ \ __/ _ \/ __| __|
+	 | |____| |  | |____) | |__| |  __/ ||  __/ (__| |_ 
+	  \_____|_|  |_|_____/|_____/ \___|\__\___|\___|\__|
+
+			CMSDetect 
+	Python script to detect the CMS that website running
+			By Mr.Kara						'''
+	print banner
 # Mask the user agent so it doesn't show as python and get blocked, set global for request that need to allow for redirects
 # Get function to swap the user agent
 def get(websiteToScan):
